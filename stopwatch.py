@@ -18,6 +18,15 @@ def stopwatch():
         # 動作中の場合は、どうすればよいか考えてみて
         # ください。何度でも繰り返し計測できるようにする
         # には、どうすればよいでしょうか？
+        if stopped:
+            start = time.time()
+            stopped = False
+            print('Running...')
+        else:
+            end = time.time()
+            stopped = True
+            print('Stopped.')
+            print(end-start)
     return inner
 
 # %%
